@@ -7,17 +7,51 @@ import Nav from "../components/nav.astro";
 <Layout title="Welcome to Astro.">
   <main>
     <Nav />
+
+    <!-- <h1>
+      <span class="I-header">I</span>
+      <div aria-label="love" class="heart"></div>
+      <span class="web-header">Web</span>
+    </h1> -->
     <Blogpot />
   </main>
 </Layout>
 
 <style>
   main {
-    padding: 1rem;
-    width: 800px;
-    max-width: calc(100% - 2rem);
     color: white;
     font-size: 20px;
     line-height: 1.6;
+  }
+  /* css heart */
+  .heart {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background-color: red;
+    transform: rotate(-45deg);
+    top: 20rem;
+  }
+
+  .heart::before,
+  .heart::after {
+    content: "";
+    position: absolute;
+    background-color: red;
+    border-radius: 50%;
+  }
+
+  .heart::before {
+    top: -104px;
+    left: -5px;
+    width: 500px;
+    height: 540px;
+  }
+
+  .heart::after {
+    top: -1px;
+    left: 16px;
+    width: 140px;
+    height: 102px;
   }
 </style>
