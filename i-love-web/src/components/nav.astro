@@ -1,0 +1,116 @@
+<nav>
+  <ul>
+    <li class="desktop-home-button">
+      <a href="/"
+        >I <span role="img" aria-label="love">&#10084;&#65039;</span> Home</a
+      >
+    </li>
+    <li class="mobile-home-button">
+      <div class="heart"></div>
+       Home
+    </li>
+    <li>
+      <a href="/"
+        >I <span role="img" aria-label="love">&#10084;&#65039;</span> web</a
+      >
+    </li>
+    <li>
+      I <span role="img" aria-label="love">&#10084;&#65039;</span> web door Demi
+      van der Maarl
+    </li>
+  </ul>
+</nav>
+<style>
+  main body {
+    margin: 0;
+  }
+  ul li {
+    list-style-type: none;
+    /* margin: 1rem 5rem 4rem 1rem;*/
+  }
+  ul {
+    padding: 1rem;
+  }
+  li a {
+    color: white;
+    text-decoration: none;
+  }
+
+  nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 2rem;
+    width: 100%;
+    width: 100vw;
+
+    background-color: pink;
+  }
+  li:nth-child(3) {
+    padding-left: 5rem;
+  }
+  /*nav footer */
+  li:last-child {
+    display: flex;
+    position: relative;
+    top: 5rem;
+  }
+  .desktop-home-button {
+    display: none;
+  }
+
+  .mobile-home-button {
+    font-size: 2rem;
+    position: relative;
+    /* margin-right: 20rem; */
+    z-index: 1;
+  }
+  /* css heart */
+  .heart {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    transform: rotate(-45deg);
+    left: -5px;
+    z-index: -1;
+  }
+
+  .heart::before,
+  .heart::after {
+    content: "";
+    position: absolute;
+
+    background-color: red;
+    border-radius: 50%;
+  }
+
+  .heart::before {
+    top: -52px;
+    left: -1px;
+    width: 100px;
+    height: 108px;
+  }
+
+  .heart::after {
+    top: -1px;
+    left: 16px;
+    width: 140px;
+    height: 102px;
+  }
+
+  @media (min-width: 700px) {
+    ul li {
+      justify-content: space-between;
+    }
+    .mobile-home-button {
+      display: none;
+    }
+    .desktop-home-button {
+      display: block;
+    }
+
+    li:last-child {
+      margin-left: auto;
+    }
+  }
+</style>

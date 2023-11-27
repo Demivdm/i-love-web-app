@@ -1,1 +1,3 @@
-/// <reference types="astro/client" />
+interface ImportMetaEnv {
+    readonly DATO_API_KEY: string;
+  }
