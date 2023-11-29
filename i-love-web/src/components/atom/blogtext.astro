@@ -1,0 +1,13 @@
+<!-- ---
+export interface TextProps {
+  text: string
+}
+
+export interface Props {
+  item: TextProps
+}
+
+const { item } = Astro.props;
+---
+
+<div set:html={item.text} /> -->

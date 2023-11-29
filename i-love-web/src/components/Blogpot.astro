@@ -1,4 +1,6 @@
 ---
+// import { parseMarkdown } from "./markdown";
+
 const response = await fetch("https://graphql.datocms.com/", {
   method: "POST",
   headers: {
@@ -15,7 +17,7 @@ const response = await fetch("https://graphql.datocms.com/", {
           photo {
             id
           }
-          blogtext
+          blogtext (markdown: true)
           date
         }
       }
@@ -25,14 +27,9 @@ const response = await fetch("https://graphql.datocms.com/", {
 
 const json = await response.json();
 const data = json.data.allBlogposts;
-
-const { frontmatter } = Astro.props;
-
-console.log(data[0]);
 ---
 
 <h2>{data[0].title}</h2>
-{frontmatter.data[0].blogtext}
 
 <style>
   h2 {
