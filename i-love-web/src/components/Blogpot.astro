@@ -1,5 +1,5 @@
 ---
-// import { parseMarkdown } from "./markdown";
+import { marked } from "marked";
 
 const response = await fetch("https://graphql.datocms.com/", {
   method: "POST",
@@ -17,19 +17,24 @@ const response = await fetch("https://graphql.datocms.com/", {
           photo {
             id
           }
-          blogtext (markdown: true)
+          blogtext
           date
         }
       }
     `,
   }),
 });
+const { data } = await response.json();
+const markdownBlog = data.allBlogposts[0].blogtext;
 
-const json = await response.json();
-const data = json.data.allBlogposts;
+const content = marked(markdownBlog);
+
+// const json = await response.json();
+// const data = json.data.allBlogposts;
 ---
 
-<h2>{data[0].title}</h2>
+<h2>{data.allBlogposts[0].title}</h2>
+<article set:html={content} />
 
 <style>
   h2 {
