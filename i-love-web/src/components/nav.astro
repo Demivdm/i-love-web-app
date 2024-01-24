@@ -51,10 +51,12 @@
     height: 4rem;
     container-type: inline-size;
     background-color: var(--accent-pink);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    @supports (--css: variables) {
+      background-color: var(--enhanced-accent-pink);
+    }
   }
-  @supports (--css: variables) {
-    background-color: var(--enhanced-accent-pink);
-  }
+
   li:nth-child(3) {
     padding-left: 5rem;
   }
