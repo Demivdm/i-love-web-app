@@ -8,12 +8,13 @@ export let data;
 <Layout title="I ❤️ web">
   <main>
     <Nav />
-
-    <!-- <h1>
-      <span class="I-header">I</span>
-      <div aria-label="love" class="heart"></div>
-      <span class="web-header">Web</span>
-    </h1> -->
+    <section class="homepage">
+      <h1>
+        <span class="I-header">I</span>
+        <div aria-label="love" class="heart"></div>
+        <span class="web-header">Web</span>
+      </h1>
+    </section>
     <Blogpot />
   </main>
 </Layout>
@@ -24,11 +25,24 @@ export let data;
     font-size: 20px;
     line-height: 1.6;
   }
+
+  .homepage {
+    display: flex;
+    container-type: inline-size;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+  @container (min-width: 500px) {
+    h1 {
+      font-size: 5rem;
+    }
+  }
   /* css heart */
   .heart {
-    position: absolute;
-    width: 500px;
-    height: 500px;
+    width: 100px;
+    height: 100px;
     background-color: red;
     transform: rotate(-45deg);
     top: 20rem;
@@ -45,8 +59,8 @@ export let data;
   .heart::before {
     top: -104px;
     left: -5px;
-    width: 500px;
-    height: 540px;
+    width: 200px;
+    height: 240px;
   }
 
   .heart::after {
