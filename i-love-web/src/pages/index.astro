@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Blogpot from "../components/Blogpot.astro";
 import Nav from "../components/nav.astro";
+import Overview from "../components/overview.astro";
 export let data;
 ---
 
@@ -42,17 +43,16 @@ export let data;
         <span class="web-header">Web</span>
       </h1>
     </section>
+    <section class="blog-overview">
+      <h2>I <img src="heart.svg" alt="love" /> blogs</h2>
+      <Overview />
+    </section>
+
     <Blogpot />
   </main>
 </Layout>
 
 <style>
-  main {
-    color: white;
-    font-size: 20px;
-    line-height: 1.6;
-  }
-
   .homepage {
     display: flex;
     container-type: inline-size;
@@ -71,6 +71,22 @@ export let data;
   }
   h1 svg {
     width: 10em;
+    animation: pulse 2s infinite;
+    transform-origin: center;
+  }
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  h2 img {
+    width: 5em;
   }
   @container (min-width: 50em) {
     h1 {

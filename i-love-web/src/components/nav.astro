@@ -3,10 +3,10 @@
     <li class="desktop-home-button">
       <a href="/">I <img src="heart.svg" alt="love" /> Home</a>
     </li>
-    <li class="mobile-home-button">
+    <!-- <li class="mobile-home-button">
       <div class="heart"></div>
       <a href="/">Home</a>
-    </li>
+    </li> -->
     <li>
       <a href="/">I <img src="heart.svg" alt="love" /> blogs</a>
     </li>
@@ -17,9 +17,6 @@
 </nav>
 
 <style>
-  main body {
-    margin: 0;
-  }
   ul li {
     list-style-type: none;
     display: flex;
@@ -53,7 +50,10 @@
     font-size: 2rem;
     height: 4rem;
     container-type: inline-size;
-    background-color: pink;
+    background-color: var(--accent-pink);
+  }
+  @supports (--css: variables) {
+    background-color: var(--enhanced-accent-pink);
   }
   li:nth-child(3) {
     padding-left: 5rem;
@@ -135,6 +135,7 @@
   }
   @container (min-width: 28em) {
     .mobile-home-button {
+      display: none;
       position: absolute;
       left: -9999999999px;
     }
