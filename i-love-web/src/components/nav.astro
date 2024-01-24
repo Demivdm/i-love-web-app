@@ -1,32 +1,44 @@
 <nav>
   <ul>
     <li class="desktop-home-button">
-      <a href="/"
-        >I <span role="img" aria-label="love">&#10084;&#65039;</span> Home</a
-      >
+      <a href="/">I <img src="heart.svg" alt="love" /> Home</a>
     </li>
     <li class="mobile-home-button">
       <div class="heart"></div>
       <a href="/">Home</a>
     </li>
     <li>
-      <a href="/"
-        >I <span role="img" aria-label="love">&#10084;&#65039;</span> blogs</a
-      >
+      <a href="/">I <img src="heart.svg" alt="love" /> blogs</a>
     </li>
     <li>
-      I <span role="img" aria-label="love">&#10084;&#65039;</span> web door Demi
-      van der Maarl
+      I <img src="heart.svg" alt="love" /> web door Demi van der Maarl
     </li>
   </ul>
 </nav>
+
 <style>
   main body {
     margin: 0;
   }
   ul li {
     list-style-type: none;
+    display: flex;
+    align-items: center;
   }
+  li > img {
+    width: 2rem;
+    padding: 1rem 0.5rem 0.5rem 0.5rem;
+  }
+
+  li a {
+    display: flex;
+    align-items: center;
+  }
+  li a img {
+    width: 2rem;
+    padding: 1rem 0.5rem 0.5rem 0.5rem;
+  }
+
   ul {
     padding: 1rem;
   }
@@ -53,6 +65,11 @@
     top: 5rem;
     left: 0;
     opacity: 0.8;
+  }
+
+  li span svg {
+    width: 2rem;
+    height: 3rem;
   }
   .desktop-home-button {
     display: none;
