@@ -11,7 +11,34 @@ export let data;
     <section class="homepage">
       <h1>
         <span class="I-header">I</span>
-        <div aria-label="love" class="heart"></div>
+        <svg
+          width="488"
+          height="437"
+          viewBox="0 0 488 437"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            x="242.953"
+            y="70.3433"
+            width="259.265"
+            height="259.265"
+            transform="rotate(45 242.953 70.3433)"
+            fill="#B41010"></rect>
+          <ellipse
+            cx="138.342"
+            cy="138.677"
+            rx="138.342"
+            ry="138.677"
+            fill="#B41010"></ellipse>
+          <ellipse
+            cx="348.702"
+            cy="138.677"
+            rx="138.342"
+            ry="138.677"
+            fill="#B41010"></ellipse>
+        </svg>
+
         <span class="web-header">Web</span>
       </h1>
     </section>
@@ -32,11 +59,25 @@ export let data;
   }
 
   h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    padding-top: 5rem;
   }
-  @container (min-width: 500px) {
+  h1 span {
+    padding: 1em;
+  }
+  h1 svg {
+    width: 10em;
+  }
+  @container (min-width: 50em) {
     h1 {
       font-size: 5rem;
+      flex-direction: row;
+      margin: auto;
+      padding: 5rem;
     }
   }
   /* css heart */
