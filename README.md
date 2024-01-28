@@ -12,7 +12,6 @@ Dit is de broncode voor mijn "I Love Web" pagina, waar ik mijn blogs bijhoudt. D
 - [Installatie](#installatie)
 - [Configuratie](#configuratie)
 - [Gebruik](#gebruik)
-- [Bijdragen](#bijdragen)
 - [Licentie](#licentie)
 
 ## Technologieën
@@ -28,6 +27,15 @@ Dit is de broncode voor mijn "I Love Web" pagina, waar ik mijn blogs bijhoudt. D
 ```
 npm install
 ```
+
+## Gebruik
+
+Start de ontwikkelingsserver.
+
+```
+npm run dev
+```
+Open je browser en ga naar http://localhost:4321 om de site te bekijken.
 
 ## Licentie
 
