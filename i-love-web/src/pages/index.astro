@@ -42,13 +42,14 @@ export let data;
 
         <span class="web-header">Web</span>
       </h1>
+      <!-- <p>
+        Welkom op de I love web pagina. Hier hou ik mijn blog en anderen
+        bevinden op het internet bij. Ik wens je veel lees plezier!
+      </p> -->
     </section>
     <section class="blog-overview">
-      <h2>I <img src="heart.svg" alt="love" /> blogs</h2>
       <Overview />
     </section>
-
-    <Blogpot />
   </main>
 </Layout>
 
@@ -56,6 +57,7 @@ export let data;
   .homepage {
     display: flex;
     container-type: inline-size;
+    height: 100vh;
   }
 
   h1 {
@@ -69,6 +71,7 @@ export let data;
   h1 span {
     padding: 1em;
   }
+
   h1 svg {
     width: 5em;
     height: auto;
@@ -86,9 +89,12 @@ export let data;
       transform: scale(1);
     }
   }
-  h2 img {
-    width: 5em;
+  @media (prefers-reduced-motion) {
+    h1 svg {
+      animation: pulse 4s ease-in;
+    }
   }
+
   @container (min-width: 50em) {
     h1 {
       font-size: 4rem;

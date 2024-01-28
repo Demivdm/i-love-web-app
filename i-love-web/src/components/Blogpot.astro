@@ -29,24 +29,86 @@ const { data } = await response.json();
 const markdownBlog = data.allBlogposts[0].blogtext;
 
 const content = marked(markdownBlog);
-
-// const json = await response.json();
-// const data = json.data.allBlogposts;
 ---
 
 <h2>{data.allBlogposts[0].title}</h2>
+<section class="accesibility-btns">
+  <button
+    class="toggle-button"
+    id="increaseText"
+    aria-hidden="true"
+    aria-label="tekst vergroten">t T</button
+  >
+  <button class="toggle-button" id="readableFont">Leesbaar lettertype</button>
+  <button class="high-contrast-btn" id="highContrast">Hoog contrast</button>
+  <button class="reset-button" id="resetSettings">Reset instellingen</button>
+</section>
 <article set:html={content} />
+<script defer>
+  document.addEventListener("DOMContentLoaded", function () {
+    // buttons ophalen
+    const increaseTextBtn = document.getElementById("increaseText");
+    const readableFontBtn = document.getElementById("readableFont");
+    const highContrastBtn = document.getElementById("highContrast");
+    const resetSettingsBtn = document.getElementById("resetSettings");
 
+    // event listeners toevoegen aan buttons
+    increaseTextBtn.addEventListener("click", function () {
+      // font size vergroten
+      document.body.style.fontSize = "larger";
+    });
+
+    readableFontBtn.addEventListener("click", function () {
+      // goed leesbaar font
+      document.body.style.fontFamily = "Arial, sans-serif";
+      document.body.style.lineHeight = "2rem";
+    });
+
+    highContrastBtn.addEventListener("click", function () {
+      // meer contrast
+      document.body.style.backgroundColor = "black";
+      document.body.style.color = "yellow";
+    });
+
+    resetSettingsBtn.addEventListener("click", function () {
+      // alles terug naar het orgineel
+      document.body.style.fontSize = "";
+      document.body.style.fontFamily = "";
+      document.body.style.backgroundColor = "";
+      document.body.style.lineHeight = "";
+      document.body.style.color = "";
+    });
+  });
+</script>
 <style>
   h2 {
-    color: white;
+    color: black;
     font-size: 5rem;
+    text-align: center;
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+  }
+  .accesibility-btns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 1rem;
   }
   article {
     max-width: 50vw;
     margin: auto;
   }
+  @media (min-width: 600px) {
+    article h2 p {
+      font: 0.5rem;
+    }
+  }
+
   article p {
     text-wrap: pretty;
+  }
+  .high-contrast-btn {
+    background-color: var(--black);
+    color: yellow;
   }
 </style>

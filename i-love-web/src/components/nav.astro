@@ -8,7 +8,7 @@
       <a href="/">Home</a>
     </li> -->
     <li>
-      <a href="/">I <img src="heart.svg" alt="love" /> blogs</a>
+      <a href="#overview">I <img src="heart.svg" alt="love" /> blogs</a>
     </li>
     <li>
       I <img src="heart.svg" alt="love" /> web door Demi van der Maarl
@@ -17,20 +17,28 @@
 </nav>
 
 <style>
+  nav {
+    position: fixed;
+    width: 100vw;
+    z-index: 1;
+    top: 0;
+  }
   ul li {
     list-style-type: none;
     display: flex;
     align-items: center;
+    padding-right: 1em;
+  }
+
+  ul li:hover {
+    transition: 0.5s ease-in;
+    scale: 1.1;
   }
   li > img {
     width: 2rem;
     padding: 1rem 0.5rem 0.5rem 0.5rem;
   }
 
-  li a {
-    display: flex;
-    align-items: center;
-  }
   li a img {
     width: 2rem;
     padding: 1rem 0.5rem 0.5rem 0.5rem;
@@ -40,13 +48,12 @@
     padding: 1rem;
   }
   li a {
-    color: black;
-    text-decoration: none;
+    display: flex;
+    align-items: center;
   }
 
   nav ul {
     display: flex;
-    flex-wrap: wrap;
     font-size: 2rem;
     height: 4rem;
     container-type: inline-size;
@@ -57,15 +64,13 @@
     }
   }
 
-  li:nth-child(3) {
-    padding-left: 5rem;
-  }
   /*nav footer */
   li:last-child {
     display: flex;
-    position: relative;
-    top: 5rem;
+    position: absolute;
     left: 0;
+    top: 5rem;
+    padding-left: 1rem;
     opacity: 0.8;
   }
 
@@ -130,9 +135,7 @@
     }
 
     li:last-child {
-      top: 0;
-      margin-left: auto;
-      color: var(--black);
+      position: relative;
     }
   }
   @container (min-width: 28em) {

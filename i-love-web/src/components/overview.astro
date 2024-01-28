@@ -26,5 +26,34 @@ const response = await fetch("https://graphql.datocms.com/", {
 const { data } = await response.json();
 ---
 
-<h2>{data.allBlogposts[0].title}</h2>
-<p>{data.allBlogposts[0].korteBeschrijving}</p>
+<section class="blog-overview" id="overview">
+  <h2>I <img src="heart.svg" alt="love" /> blogs</h2>
+  <div class="card">
+    <img src="" alt="campspace logo" />
+    <a href="blogs">{data.allBlogposts[0].title}</a>
+    <p>{data.allBlogposts[0].korteBeschrijving}</p>
+  </div>
+  <style>
+    .blog-overview {
+      height: 100vh;
+      padding: 10rem 0 0 1rem;
+    }
+    h2 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 20vw;
+      font-size: 2.5rem;
+    }
+    h2 img {
+      width: 3em;
+    }
+    .card {
+      display: flex;
+      flex-direction: column;
+    }
+    .card a {
+      font-weight: bold;
+    }
+  </style>
+</section>

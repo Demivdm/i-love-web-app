@@ -45,5 +45,38 @@ const { title } = Astro.props;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+
+  /* general styling */
+
+  a {
+    color: black;
+    text-decoration: none;
+  }
+
+  button {
+    border: 0;
+    border-radius: 50px;
+    background-color: var(--accent-pink);
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    font-weight: bold;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin: 0.5rem;
+  }
+  button:hover {
+    background-color: var(--main-red);
+    color: var(--white);
+  }
+
+  button:focus-visible {
+    outline: solid var(--main-red);
+  }
+
+  li:focus-visible {
+    outline: solid var(--main-red);
+  }
+  a:focus-visible {
+    outline: solid var(--main-red);
   }
 </style>
